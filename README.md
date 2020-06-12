@@ -1,5 +1,5 @@
 <h1 align="center">Data Dashboard</h1>
-
+<h2 align="center">A Project for the NYC Coders Black Lives Matter Hackathon</h2>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
