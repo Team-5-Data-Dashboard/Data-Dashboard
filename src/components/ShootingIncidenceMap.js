@@ -11,13 +11,18 @@ class ShootingIncidenceMap extends Component {
     super(props);
 
     this.state = {
-      data: {},
+      data: [],
     };
   }
 
   componentDidMount() {
     // TODO: handle error case when we have API
-    NYCOpenDataAPI.fetchShootingIncidence().done((data) => this.setState({ data }));
+    // NYCOpenDataAPI.fetchShootingIncidence().done((data) => this.setState({ data }));
+    const url = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllShootings';
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => this.setState({ data }))
+      .catch((err) => console.error('Error: ', err));
   }
 
   render() {
@@ -27,7 +32,7 @@ class ShootingIncidenceMap extends Component {
         className="map-shooting-incidence"
         style={{ padding: '20px', textAlign: 'left' }}
       >
-        <h4>NYC Shooting Incidence (2010-2018)</h4>
+        <h4>NYC Shooting Incidence (2006-2018)</h4>
         <Map center={[40.7128, -74.0060]} zoom={10}>
           <TileLayer
             url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
