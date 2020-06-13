@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import ShootingIncidenceMap from './components/ShootingIncidenceMap';
+import './App.scss';
+import DashComponent from './components/DashComponent.js'
 
 function App() {
   return (
-    <ShootingIncidenceMap />
+    <div>
+      <DashComponent />
+    </div>
   );
 }
 
