@@ -1,25 +1,18 @@
-import React, {component} from 'react';
+import React from 'react';
 
 class DashCompontent extends React.Component {
 	render(){
 		return (
-			<div 
-				className="dashcomp-container"
-			>
-				<div
-					className="dashcomp-head"
-				>
-					<div
-						className="dashcomp-head-title"
-					>
+			<>
+			<div className="dashcomp-container">
+				<div className="dashcomp-head">
+					<div className="dashcomp-head-title">
 						8 tasks completed out of 10
 					</div>
-					<div
-						className="dashcomp-head-filter"
-					>
+					<div className="dashcomp-head-filter">
 						Show:&nbsp;
 						<a
-							href="#"
+							href="https://google.com"
 						>
 							This week
 						</a>
@@ -127,6 +120,7 @@ class DashCompontent extends React.Component {
 					</div>
 				</div>
 			</div>
+			</>
 		);
 	}
 }
