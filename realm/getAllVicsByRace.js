@@ -1,5 +1,5 @@
-exports = async function (payload, response) {
-  const race = payload.query.race;
+exports = async function getAllVicsByRace(payload, response) {
+  const { race } = payload.query;
   const exclusions = {
     INCIDENT_KEY: 0,
     JURISDICTION_CODE: 0,
@@ -10,7 +10,6 @@ exports = async function (payload, response) {
     X_COORD_CD: 0,
     Y_COORD_CD: 0,
   };
-  const id = '5ee4fa0c6d39589ef3ed2c9a';
   const collection = context.services
     .get('mongodb-atlas')
     .db('shootings')
