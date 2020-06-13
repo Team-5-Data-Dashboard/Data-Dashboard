@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* Not referenced internally - only by leaflet library  */
+.leaflet-container {
+  width: 100%;
+  height: 50vh;
+}
