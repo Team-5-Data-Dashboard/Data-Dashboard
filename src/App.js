@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import DashComponent from './components/dashComponent';
+// import DashComponent from './components/dashComponent';
 import NavBar from './components/navBar';
 import MapComponent from './components/mapComponent';
 
