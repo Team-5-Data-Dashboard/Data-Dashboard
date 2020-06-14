@@ -1,6 +1,4 @@
 import React from 'react';
-import Map from '../containers/map';
-import Info from '../containers/info';
 
 function dashCompBody(compType) {
   if (compType === 'calendar') {
@@ -67,14 +65,6 @@ function dashCompBody(compType) {
             </div>
           </li>
         </ul>
-      </div>
-    );
-  }
-  if (compType === 'map') {
-    return (
-      <div className="container">
-        <Info />
-        <Map />
       </div>
     );
   }
