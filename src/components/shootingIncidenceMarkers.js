@@ -1,6 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Marker } from 'react-leaflet';
+import L from 'leaflet';
+// import SVGIcon from '../assets/circle';
+
+export const racePoint = new L.Icon({
+  iconUrl: '../assets/circle.svg',
+  iconRetinaUrl: '../assets/circle.svg',
+  iconAnchor: [0, 0],
+  popupAnchor: [0, -35],
+  iconSize: [40, 40],
+});
 
 // PureComponent ensures that the markers are only rerendered when data changes
 class ShootingIncidenceMarkers extends PureComponent {
@@ -13,6 +23,7 @@ class ShootingIncidenceMarkers extends PureComponent {
           parseFloat(incident.Latitude.$numberDouble),
           parseFloat(incident.Longitude.$numberDouble),
         ]}
+        icon={racePoint}
       />
     ));
   }
