@@ -6,10 +6,11 @@ import ShootingRacialChart from './components/ShootingRacialChart';
 
 function App() {
   return (
-    <div className="App">
-      <Main />
+    <div className='App'>
+      <h1>Hello World</h1>
+      {/* <Main />
       <DashComponent />
-      <ShootingRacialChart year={2018} />
+      <ShootingRacialChart year={2018} /> */}
     </div>
   );
 }
