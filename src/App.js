@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
-import Main from './components/Main';
-import DashComponent from './components/DashComponent';
-import ShootingRacialChart from './components/ShootingRacialChart';
+// import Main from './components/Main';
+// import DashComponent from './components/DashComponent';
+// import ShootingRacialChart from './components/ShootingRacialChart';
 
 function App() {
   return (
