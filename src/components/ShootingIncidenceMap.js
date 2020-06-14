@@ -3,8 +3,7 @@ import { Map, TileLayer } from 'react-leaflet';
 import NYCOpenDataLogo from '../NYCOpenDataLogo.png';
 import ShootingIncidenceMarkers from './shootingIncidenceMarkers';
 
-const DATA_SRC =
-  'https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8';
+const DATA_SRC = 'https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8';
 
 class ShootingIncidenceMap extends Component {
   constructor(props) {
@@ -16,8 +15,7 @@ class ShootingIncidenceMap extends Component {
   }
 
   componentDidMount() {
-    const url =
-      'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllShootings';
+    const url = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllShootings';
     fetch(url)
       .then((res) => res.json())
       .then((data) => this.setState({ data }))
@@ -28,22 +26,22 @@ class ShootingIncidenceMap extends Component {
     const { data } = this.state;
     return (
       <div
-        className='map-shooting-incidence'
+        className="map-shooting-incidence"
         style={{ padding: '20px', textAlign: 'left' }}
       >
         <h4>NYC Shooting Incidence (2006-2018)</h4>
         <Map center={[40.7128, -74.006]} zoom={10}>
           <TileLayer
-            url='https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png'
+            url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
             attribution='Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
           />
           {data.length && <ShootingIncidenceMarkers data={data} />}
         </Map>
-        <a href={DATA_SRC} target='_blank' rel='noopener noreferrer'>
+        <a href={DATA_SRC} target="_blank" rel="noopener noreferrer">
           <img
             src={NYCOpenDataLogo}
-            className='nyc-data-logo'
-            alt='logo'
+            className="nyc-data-logo"
+            alt="logo"
             style={{ height: 40 }}
           />
         </a>
