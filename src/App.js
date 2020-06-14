@@ -4,18 +4,17 @@ import Main from './components/main';
 import DashComponent from './components/dashComponent';
 import NavBar from './components/navBar';
 
-
 function App() {
   return (
     <div className="App">
       <NavBar />
       <DashComponent
         headline="Shootings"
-        compType="map" 
+        compType="map"
       />
-      <DashComponent 
+      <DashComponent
         headline="8 tasks completed out of 10"
-        compType="calendar" 
+        compType="calendar"
       />
     </div>
   );
