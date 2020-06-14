@@ -6,9 +6,15 @@ import { Marker } from 'react-leaflet';
 class ShootingIncidenceMarkers extends PureComponent {
   render() {
     const { data } = this.props;
-    return data.map(
-      (incident) => <Marker key={incident._id.$oid} position={[parseFloat(incident.Latitude.$numberDouble), parseFloat(incident.Longitude.$numberDouble)]} />,
-    );
+    return data.map((incident) => (
+      <Marker
+        key={incident._id.$oid}
+        position={[
+          parseFloat(incident.Latitude.$numberDouble),
+          parseFloat(incident.Longitude.$numberDouble),
+        ]}
+      />
+    ));
   }
 }
 

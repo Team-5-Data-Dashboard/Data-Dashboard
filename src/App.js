@@ -1,20 +1,16 @@
 import React from 'react';
 import './App.scss';
-import Main from './components/main';
 import DashComponent from './components/dashComponent';
 import NavBar from './components/navBar';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <NavBar />
+      <DashComponent headline='Shootings' compType='map' />
       <DashComponent
-        headline="Shootings"
-        compType="map"
-      />
-      <DashComponent
-        headline="8 tasks completed out of 10"
-        compType="calendar"
+        headline='8 tasks completed out of 10'
+        compType='calendar'
       />
     </div>
   );
