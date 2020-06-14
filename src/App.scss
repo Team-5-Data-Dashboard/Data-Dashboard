@@ -1,26 +1,91 @@
-$mainColor: rgb(41, 41, 97);
-.App {
-  text-align: center;
+/* SASS Variables: Start */
+/* Putting SASS Variables up top for easier configurability */
+$mainColor: #292961;
+$navBG: #000;
+$navColor: #fff;
+$mapCompBG: #071117;
+$mapCompHead: #fff;
+$mapCompText: #b7b7b7;
+$dashCompBG: #071117;
+$dashCompLinks: #109cf1;
+$dashCompHeadTitle: #334d6e;
+$dashCompHeadFilter: #6a707e;
+$dashCompBodyHeader: #192a3e;
+$dashCompBodyTextFade: #334d6e80;
+$dashCompBodyTextNormal: #4c5862;
+/* SASS Variables: End */
+
+a,
+a:visited,
+a:hover, 
+a:active {
+  text-decoration: none;
+  color: $dashCompLinks;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.App-header {
+  background-color: $mainColor;
+  /*min-height: 100vh;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.container-map {
+  color: $mapCompText;
+  background-color: $mapCompBG;
+  justify-content: center;
+  flex-direction: row;
+  white-space: nowrap;
+  height: 98%;
+  .info, .map {
+    display: inline-block;
+    white-space: normal;
+    height: 100%;
+    vertical-align: top;
+  }
+  .map {
+    width: 40%;
+    .leaflet-container {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.info {
+  width: 60%;
+}
+
+.navbar {
+  background-color: $navBG;
+  color: $navColor;
+  max-height: 2%;
+  padding: 1em 2em;
+  line-height: 1;
+  font-weight: 900;
+  text-align: left;
 }
 
 .dashcomp-container {
-  background-color: #fff;
+  background-color: $dashCompBG;
   box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
   border-radius: 4px;
   margin: 1rem;
   padding: 1rem 1.5rem;
-  a,
-  a:visited,
-  a:hover, 
-  a:active {
-    text-decoration: none;
-    color: #109cf1;
-  }
   .dashcomp-head {
     padding-bottom: 1rem;
     position: relative;
@@ -32,13 +97,13 @@ $mainColor: rgb(41, 41, 97);
     }
     .dashcomp-head-title {
       font-size: .8rem;
-      color: #334d6e;
+      color: $dashCompHeadTitle;
       left: 0;
       font-weight: 500;
     }
     .dashcomp-head-filter {
       font-size: .75rem;
-      color: #6a707e;
+      color: $dashCompHeadFilter;
       right: 0;
     }
   }
@@ -46,7 +111,7 @@ $mainColor: rgb(41, 41, 97);
 
 .dashcomp-calendar {
   .dashcomp-calendar-header {
-    color: #192a3e;
+    color: $dashCompBodyHeader;
     font-size: .9rem;
     line-height: 1.5;
     letter-spacing: 0.01em;
@@ -63,89 +128,15 @@ $mainColor: rgb(41, 41, 97);
       line-height: 1.5;
       text-align: center;
       .dashcomp-calendar-weekday {
-        color: #334d6e80;
+        color: $dashCompBodyTextFade;
         font-size: .8rem;
         font-weight: 500;
         padding-bottom: .67em;
       }
       .dashcomp-calendar-datenum {
-        color: #4c5862;
+        color: $dashCompBodyTextNormal;
         font-size: .75rem;
       }
     }
   }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  
-  background-color: $mainColor;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/* Not referenced internally - only by leaflet library  */
-.leaflet-container {
-  width: 100%;
-  height: 50vh;
-}
-.container {
-  border: solid 1px;
-  color: $mainColor;
-  justify-content: center;
-  flex-direction: row;
-  white-space: nowrap;
-}
-
-.navbar {
-  background-color: $mainColor;
-  color: white;
-  max-height: 50px;
-  padding: 10px;
-}
-.container div{
-  display: inline-block;
-  white-space: normal;
-  height: 100%;
-}
-
-.map {
-  width: 40%;
-  border: solid 1px red;
-}
-
-.map img {
-  width: 100%;
-  padding-top: 30%;
-  padding-bottom: 40%;
-}
-
-
-.info {
-  width: 60%;
-  
-}
-
