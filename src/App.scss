@@ -1,3 +1,4 @@
+$mainColor: rgb(41, 41, 97);
 .App {
   text-align: center;
 }
@@ -83,7 +84,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  
+  background-color: $mainColor;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -111,3 +113,42 @@
   width: 100%;
   height: 50vh;
 }
+.container {
+  border: solid 1px;
+  color: $mainColor;
+  justify-content: center;
+  flex-direction: row;
+  white-space: nowrap;
+  min-height: 95vh;
+}
+
+.navbar {
+  background-color: $mainColor;
+  color: white;
+  max-height: 50px;
+  padding: 10px;
+}
+.container div{
+  display: inline-block;
+  white-space: normal;
+  height: 100%;
+}
+
+.map {
+  width: 40%;
+  border: solid 1px red;
+}
+
+.map img {
+  width: 100%;
+  padding-top: 30%;
+  padding-bottom: 40%;
+}
+
+
+.info {
+  width: 60%;
+  padding-top: 10%;
+  
+}
+
