@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Map, TileLayer } from 'react-leaflet';
-import NYCOpenDataAPI from '../api/NYCOpenDataAPI';
 import NYCOpenDataLogo from '../NYCOpenDataLogo.png';
 import ShootingIncidenceMarkers from './ShootingIncidenceMarkers';
 
@@ -16,8 +15,6 @@ class ShootingIncidenceMap extends Component {
   }
 
   componentDidMount() {
-    // TODO: handle error case when we have API
-    // NYCOpenDataAPI.fetchShootingIncidence().done((data) => this.setState({ data }));
     const url = 'https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllShootings';
     fetch(url)
       .then((res) => res.json())
