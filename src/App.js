@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.scss';
-import Main from './components/Main.js';
-import DashComponent from './components/DashComponent.js'
-
+import Main from './components/Main';
+import DashComponent from './components/DashComponent';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <Main />
       <DashComponent />
-
     </div>
   );
 }
