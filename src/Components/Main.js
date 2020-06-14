@@ -1,17 +1,19 @@
 import React from 'react';
 import NavBar from './NavBar';
-import RacialBreakdown from './RacialBreakdown';
+import Map from '../containers/Map';
+import Info from '../containers/Info';
 
 function Main() {
   return (
-    <>
+    <div>
       <div>
         <NavBar />
       </div>
       <div>
-        <RacialBreakdown />
+        <Info />
+        <Map />
       </div>
-    </>
+    </div>
   );
 }
 
