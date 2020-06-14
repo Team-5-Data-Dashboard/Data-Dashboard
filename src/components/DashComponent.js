@@ -3,7 +3,6 @@ import React from 'react';
 class DashCompontent extends React.Component {
 	render(){
 		return (
-			<>
 			<div className="dashcomp-container">
 				<div className="dashcomp-head">
 					<div className="dashcomp-head-title">
@@ -120,7 +119,6 @@ class DashCompontent extends React.Component {
 					</div>
 				</div>
 			</div>
-			</>
 		);
 	}
 }
