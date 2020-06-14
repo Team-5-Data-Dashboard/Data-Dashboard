@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import NavBar from './NavBar.js';
-import RacialBreakdown from './RacialBreakdown.js';
+import React from 'react';
+import NavBar from './NavBar';
+import RacialBreakdown from './RacialBreakdown';
 
-class Main extends Component {
-    render() {
-        return (
-            <>
-                <div>
-                    <NavBar />
-                </div>
-                <div>
-                    <RacialBreakdown />
-                </div>
-            </>
-        )
-    }
+function Main() {
+  return (
+    <>
+      <div>
+        <NavBar />
+      </div>
+      <div>
+        <RacialBreakdown />
+      </div>
+    </>
+  );
 }
 
 export default Main;
