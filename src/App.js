@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
-import Main from './components/Main.js';
-import DashComponent from './components/DashComponent.js'
-import NavBar from './components/NavBar.js'
+import Main from './components/main';
+import DashComponent from './components/dashComponent';
+import NavBar from './components/navBar';
 
 
 function App() {
@@ -17,8 +17,6 @@ function App() {
         headline="8 tasks completed out of 10"
         compType="calendar" 
       />
-
-
     </div>
   );
 }

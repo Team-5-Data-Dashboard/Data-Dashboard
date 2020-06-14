@@ -1,16 +1,7 @@
-import React, { memo } from 'react';
+import React from 'react';
 
-const NavBar = () => {
+function NavBar {
+  return <div className='navbar'>NAVIGATION BAR Race</div>;
+};
 
-    return (
-        <div className="navbar">
-            NAVIGATION BAR
-            
-            Race
-        </div>
-    )
-    
-}
-
-
-export default memo(NavBar);
+export default NavBar;

@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React from 'react';
 import TestMap from '../img/TestMap.jpeg';
 
 const Map = () => (
-  <div className="map">
-    <img src={TestMap} alt="testlogo" />
+  <div className='map'>
+    <img src={TestMap} alt='testlogo' />
   </div>
 );
 
-export default memo(Map);
+export default Map;
