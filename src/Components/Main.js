@@ -1,20 +1,16 @@
-import React from 'react';
-import NavBar from './NavBar';
-import Map from '../containers/Map';
-import Info from '../containers/Info';
+import React, { Component } from 'react';
+import NavBar from './navBar';
 
-function Main() {
-  return (
-    <div>
-      <div>
-        <NavBar />
-      </div>
-      <div>
-        <Info />
-        <Map />
-      </div>
-    </div>
-  );
-}
 
+class Main extends Component {
+    render() {
+        return (
+            <div>
+                <div>
+                    <NavBar />
+                </div>
+            </div>
+        )
+    }
+};
 export default Main;

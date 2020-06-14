@@ -1,15 +1,22 @@
 import React from 'react';
 import './App.scss';
-import Main from './components/Main';
-import DashComponent from './components/DashComponent';
-import ShootingRacialChart from './components/shootingRacialChart';
+import Main from './components/main';
+import DashComponent from './components/dashComponent';
+import NavBar from './components/navBar';
+
 
 function App() {
   return (
-    <div className='App'>
-      <Main />
-      <DashComponent />
-      <ShootingRacialChart year={2018} />
+    <div className="App">
+      <NavBar />
+      <DashComponent
+        headline="Shootings"
+        compType="map" 
+      />
+      <DashComponent 
+        headline="8 tasks completed out of 10"
+        compType="calendar" 
+      />
     </div>
   );
 }
