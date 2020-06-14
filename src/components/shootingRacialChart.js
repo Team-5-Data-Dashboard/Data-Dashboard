@@ -61,12 +61,18 @@ class ShootingRacialChart extends Component {
 
   render() {
     const { data } = this.state;
+    const { year } = this.props;
     return (
       <div
-        className='map-shooting-incidence'
+        className="map-shooting-incidence"
         style={{ padding: '20px', textAlign: 'left', width: '50vw' }}
       >
-        <h4>NYC Shootings by Race/Ethnicity</h4>
+        <h4>
+          Victims of Shootings by Race/Ethnicity in
+          {' '}
+          {year}
+
+        </h4>
         <HorizontalBar
           data={{
             labels: Object.values(RACES).map((race) => race.text),
@@ -75,7 +81,7 @@ class ShootingRacialChart extends Component {
                 label: '# of Shootings',
                 data: Object.keys(RACES).map((race) => data[race]),
                 backgroundColor: Object.values(RACES).map(
-                  (race) => race.bar_color
+                  (race) => race.bar_color,
                 ),
               },
             ],
@@ -84,7 +90,6 @@ class ShootingRacialChart extends Component {
           height={50}
           options={{ maintainAspectRatio: false }}
         />
-        <p>Descriptive subtext goes here. Descriptive subtext goes here.</p>
       </div>
     );
   }
