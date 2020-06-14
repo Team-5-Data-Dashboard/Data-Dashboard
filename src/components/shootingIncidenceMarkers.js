@@ -2,14 +2,10 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { Marker } from 'react-leaflet';
 import L from 'leaflet';
-// import SVGIcon from '../assets/circle';
+import SVGIcon from '../assets/circle.svg';
 
 export const racePoint = new L.Icon({
-  iconUrl: '../assets/circle.svg',
-  iconRetinaUrl: '../assets/circle.svg',
-  iconAnchor: [0, 0],
-  popupAnchor: [0, -35],
-  iconSize: [40, 40],
+  iconUrl: SVGIcon,
 });
 
 // PureComponent ensures that the markers are only rerendered when data changes

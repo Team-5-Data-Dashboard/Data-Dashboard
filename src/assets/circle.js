@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 
 function SVGIcon(props) {
   const { race } = props;
-  console.log(race);
   const { color, setColor } = useState('');
 
   const determineColor = (race) => {
@@ -29,10 +28,21 @@ function SVGIcon(props) {
 
   return (
     <>
-      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19">
-        <g id="Ellipse_14" data-name="Ellipse 14" fill={color} stroke="#fff" strokeWidth="1">
-          <circle cx="9.5" cy="9.5" r="9.5" stroke="none" />
-          <circle cx="9.5" cy="9.5" r="9" fill="none" />
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='19'
+        height='19'
+        viewBox='0 0 19 19'
+      >
+        <g
+          id='Ellipse_14'
+          data-name='Ellipse 14'
+          fill={color}
+          stroke='#fff'
+          strokeWidth='1'
+        >
+          <circle cx='9.5' cy='9.5' r='9.5' stroke='none' />
+          <circle cx='9.5' cy='9.5' r='9' fill='none' />
         </g>
       </svg>
     </>
