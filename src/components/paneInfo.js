@@ -1,11 +1,14 @@
 import React from 'react';
 import ShootingRacialChart from './shootingRacialChart';
+import About from './about';
 
 function PaneInfo(props) {
-  const { year } = this.props;
+  const { year } = props;
   return (
+
     <div className="info">
-      <ShootingRacialChart year={2018} />
+      <ShootingRacialChart year={year} />
+      <About />
     </div>
   );
 }
