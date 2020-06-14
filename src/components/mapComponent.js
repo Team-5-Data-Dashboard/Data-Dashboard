@@ -12,6 +12,7 @@ class MapComponent extends React.Component {
       </div>
     );
   }
+
 }
 
 export default MapComponent;

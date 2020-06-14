@@ -39,6 +39,7 @@ class App extends React.Component {
             <option value='2019'> 2019 </option>
           </select>{' '}
         </div>
+
         <MapComponent year={this.state.year} />
       </div>
     );
