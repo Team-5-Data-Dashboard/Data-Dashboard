@@ -62,6 +62,18 @@ class ShootingRacialChart extends Component {
   render() {
     const { data } = this.state;
     const { year } = this.props;
+    const url = `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllCountByRace?year=${year}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const countMap = {};
+        data.forEach((d) => {
+          // eslint-disable-next-line no-underscore-dangle
+          countMap[d._id] = parseInt(d.count.$numberLong, 10);
+        });
+        this.setState({ data: countMap });
+      })
+      .catch((err) => console.error('Error: ', err));
     return (
       <div
         className="map-shooting-incidence"
