@@ -27,7 +27,14 @@ class PaneMap extends Component {
 
   render() {
     const { data } = this.state;
+    const { year } = this.props;
+    const url = `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllByYear?year=${year}`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => this.setState({ data }))
+      .catch((err) => console.error('Error: ', err));
     return (
+
       <div className="map">
         <Map center={[40.7128, -74.006]} zoom={11}>
           <TileLayer
