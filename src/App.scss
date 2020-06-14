@@ -1,0 +1,154 @@
+$mainColor: rgb(41, 41, 97);
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.dashcomp-container {
+  background-color: #fff;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  width: 50%;
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  a,
+  a:visited,
+  a:hover, 
+  a:active {
+    text-decoration: none;
+    color: #109cf1;
+  }
+  .dashcomp-head {
+    padding-bottom: 1rem;
+    position: relative;
+    div {
+      display: inline-block;
+      position: absolute;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+    }
+    .dashcomp-head-title {
+      font-size: .8rem;
+      color: #334d6e;
+      left: 0;
+      font-weight: 500;
+    }
+    .dashcomp-head-filter {
+      font-size: .75rem;
+      color: #6a707e;
+      right: 0;
+    }
+  }
+}
+
+.dashcomp-calendar {
+  .dashcomp-calendar-header {
+    color: #192a3e;
+    font-size: .9rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    padding-bottom: 3em;
+  }
+  .dashcomp-calendar-week {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    li {
+      flex-grow: 1;
+      list-style-type: none;
+      line-height: 1.5;
+      text-align: center;
+      .dashcomp-calendar-weekday {
+        color: #334d6e80;
+        font-size: .8rem;
+        font-weight: 500;
+        padding-bottom: .67em;
+      }
+      .dashcomp-calendar-datenum {
+        color: #4c5862;
+        font-size: .75rem;
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  
+  background-color: $mainColor;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Not referenced internally - only by leaflet library  */
+.leaflet-container {
+  width: 100%;
+  height: 50vh;
+}
+.container {
+  border: solid 1px;
+  color: $mainColor;
+  justify-content: center;
+  flex-direction: row;
+  white-space: nowrap;
+  min-height: 95vh;
+}
+
+.navbar {
+  background-color: $mainColor;
+  color: white;
+  max-height: 50px;
+  padding: 10px;
+}
+.container div{
+  display: inline-block;
+  white-space: normal;
+  height: 100%;
+}
+
+.map {
+  width: 40%;
+  border: solid 1px red;
+}
+
+.map img {
+  width: 100%;
+  padding-top: 30%;
+  padding-bottom: 40%;
+}
+
+
+.info {
+  width: 60%;
+  padding-top: 10%;
+  
+}
+
