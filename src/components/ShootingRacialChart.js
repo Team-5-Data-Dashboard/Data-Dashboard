@@ -2,6 +2,37 @@ import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
 // import NYCOpenDataAPI from '../api/NYCOpenDataAPI';
 
+const RACES = {
+  AMERICAN_INDIAN_ALASKAN_NATIVE: {
+    text: 'American Indian/Alaskan Native',
+    bar_color: 'rgba(255, 99, 132, 1)',
+  },
+  BLACK: {
+    text: 'Black',
+    bar_color: 'rgba(54, 162, 235, 1)',
+  },
+  BLACK_HISPANIC: {
+    text: 'Black Hispanic',
+    bar_color: 'rgba(255, 206, 86, 1)',
+  },
+  WHITE_HISPANIC: {
+    text: 'White Hispanic',
+    bar_color: 'rgba(75, 192, 192, 1)',
+  },
+  WHITE: {
+    text: 'White',
+    bar_color: 'rgba(153, 102, 255, 1)',
+  },
+  ASIAN_PACIFIC_ISLANDER: {
+    text: 'Asian/Pacific Islander',
+    bar_color: 'rgba(255, 159, 64, 1)',
+  },
+  UNKNOWN: {
+    text: 'Unknown',
+    bar_color: 'rgba(255, 159, 64, 1)',
+  },
+};
+
 class ShootingRacialChart extends Component {
   constructor(props) {
     super(props);
@@ -26,27 +57,11 @@ class ShootingRacialChart extends Component {
         <h4>NYC Shootings by Race/Ethnicity</h4>
         <Bar
           data={{
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: Object.values(RACES).map((race) => race.text),
             datasets: [{
-              label: '# of Votes',
-              data: [12, 19, 3, 5, 2, 3],
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)',
-              ],
-              borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)',
-              ],
-              borderWidth: 1,
+              label: '# of Shootings',
+              data: [12, 19, 5, 8, 2, 3, 2],
+              backgroundColor: Object.values(RACES).map((race) => race.bar_color),
             }],
           }}
           width={100}
