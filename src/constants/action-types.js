@@ -1,0 +1,1 @@
+export const GET_ALL_SHOOTINGS = 'GET_ALL_SHOOTINGS';
