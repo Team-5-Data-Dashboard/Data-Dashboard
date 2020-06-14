@@ -1,9 +1,13 @@
 import React from 'react';
+import ShootingRacialChart from './shootingRacialChart';
 import About from './about';
 
-function PaneInfo() {
+function PaneInfo(props) {
+  const { year } = props;
   return (
-    <div className='info'>
+
+    <div className="info">
+      <ShootingRacialChart year={year} />
       <About />
     </div>
   );
