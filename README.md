@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3096fefd-d1e9-4b07-93ff-0dd8edc5fd9c/deploy-status)](https://app.netlify.com/sites/data-dashboard-blm/deploys)
+
 <h1 align="center">Data Dashboard</h1>
 <h2 align="center">A Project for the NYC Coders Black Lives Matter Hackathon</h2>
 
