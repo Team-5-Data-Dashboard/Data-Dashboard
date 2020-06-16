@@ -2,17 +2,15 @@ import React from 'react';
 import PaneInfo from './paneInfo';
 import PaneMap from './paneMap';
 
-class MapComponent extends React.Component {
-  render() {
-    return (
+function MapComponent(props) {
+  const { year } = props;
 
-      <div className="container-map">
-        <PaneInfo year={this.props.year} />
-        <PaneMap year={this.props.year} />
-      </div>
-    );
-  }
-
+  return (
+    <div className="container-map">
+      <PaneInfo year={year} />
+      <PaneMap year={year} />
+    </div>
+  );
 }
 
 export default MapComponent;
