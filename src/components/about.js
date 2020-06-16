@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <div>
+    <>
       <h1>About Data Dashboard</h1>
       <p>
         Our team's project for the NYC Coders Black Lives Matter Hackathon is to
@@ -15,7 +15,7 @@ function About() {
         victims. We hope that with this information, people gain a greater
         understanding of the disparities present in our society.
       </p>
-    </div>
+    </>
   );
 }
 

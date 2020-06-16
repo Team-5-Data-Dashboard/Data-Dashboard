@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Marker } from 'react-leaflet';
 import L from 'leaflet';
@@ -69,13 +69,11 @@ const determineColor = (incident, race) => {
 };
 
 // PureComponent ensures that the markers are only rerendered when data changes
-class ShootingIncidenceMarkers extends PureComponent {
-  render() {
-    const { data } = this.props;
-    return data.map((incident) => (
-      determineColor(incident, incident.VIC_RACE)
-    ));
-  }
+function ShootingIncidenceMarkers(props) {
+  const { data } = props;
+  return data.map((incident) => (
+    determineColor(incident, incident.VIC_RACE)
+  ));
 }
 
 ShootingIncidenceMarkers.propTypes = {
