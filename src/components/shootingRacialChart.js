@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { HorizontalBar } from 'react-chartjs-2';
 
@@ -33,18 +33,11 @@ const RACES = {
   },
 };
 
-class ShootingRacialChart extends Component {
-  constructor(props) {
-    super(props);
+function ShootingRacialChart(props) {
+  const [data, setData] = useState([]);
+  const { year } = props;
 
-    this.state = {
-      data: [],
-    };
-  }
-
-  componentDidMount() {
-    // eslint-disable-next-line react/prop-types
-    const { year } = this.props;
+  const fetchData = (year) => {
     const url = `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllCountByRace?year=${year}`;
     fetch(url)
       .then((res) => res.json())
@@ -54,57 +47,44 @@ class ShootingRacialChart extends Component {
           // eslint-disable-next-line no-underscore-dangle
           countMap[d._id] = parseInt(d.count.$numberLong, 10);
         });
-        this.setState({ data: countMap });
+        setData(countMap);
       })
       .catch((err) => console.error('Error: ', err));
-  }
+  };
 
-  render() {
-    const { data } = this.state;
-    const { year } = this.props;
-    const url = `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllCountByRace?year=${year}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        const countMap = {};
-        data.forEach((d) => {
-          // eslint-disable-next-line no-underscore-dangle
-          countMap[d._id] = parseInt(d.count.$numberLong, 10);
-        });
-        this.setState({ data: countMap });
-      })
-      .catch((err) => console.error('Error: ', err));
-    return (
-      <div
-        className="map-shooting-incidence"
-        style={{ padding: '20px', textAlign: 'left', width: '50vw' }}
-      >
-        <h4>
-          Victims of Shootings by Race/Ethnicity in
-          {' '}
-          {year}
+  useEffect(() => {
+    fetchData(year);
+  }, [year]);
 
-        </h4>
-        <HorizontalBar
-          data={{
-            labels: Object.values(RACES).map((race) => race.text),
-            datasets: [
-              {
-                label: '# of Shootings',
-                data: Object.keys(RACES).map((race) => data[race]),
-                backgroundColor: Object.values(RACES).map(
-                  (race) => race.bar_color,
-                ),
-              },
-            ],
-          }}
-          width={100}
-          height={50}
-          options={{ maintainAspectRatio: false }}
-        />
-      </div>
-    );
-  }
+  return (
+    <div
+      className="map-shooting-incidence"
+      style={{ padding: '20px', textAlign: 'left', width: '50vw' }}
+    >
+      <h4>
+        Victims of Shootings by Race/Ethnicity in
+        {' '}
+        {year}
+      </h4>
+      <HorizontalBar
+        data={{
+          labels: Object.values(RACES).map((race) => race.text),
+          datasets: [
+            {
+              label: '# of Shootings',
+              data: Object.keys(RACES).map((race) => data[race]),
+              backgroundColor: Object.values(RACES).map(
+                (race) => race.bar_color,
+              ),
+            },
+          ],
+        }}
+        width={100}
+        height={50}
+        options={{ maintainAspectRatio: false }}
+      />
+    </div>
+  );
 }
 
 ShootingRacialChart.props = {
