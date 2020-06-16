@@ -6,7 +6,7 @@ function PaneInfo(props) {
   const { year } = props;
   return (
     <div className="info">
-      <ShootingRacialChart year={2019} />
+      <ShootingRacialChart year={year} />
       <About />
     </div>
   );

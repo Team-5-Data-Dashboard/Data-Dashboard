@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <MapComponent />
+      <MapComponent year={2019} />
     </div>
   );
 }
