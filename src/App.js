@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <YearContextProvider>
         <NavBar />
-        <MapComponent year={2019} />
+        <MapComponent />
       </YearContextProvider>
     </div>
   );
