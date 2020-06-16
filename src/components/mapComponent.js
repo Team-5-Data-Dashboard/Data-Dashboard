@@ -7,8 +7,8 @@ function MapComponent(props) {
 
   return (
     <div className="container-map">
-      <PaneInfo year={year} />
-      <PaneMap year={year} />
+      <PaneInfo />
+      <PaneMap />
     </div>
   );
 }

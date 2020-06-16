@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { YearContext } from '../contexts/yearContext';
 
 function NavBar() {
-  const [selectedYear, changeSelectedYear] = useState('2019');
-
-  const updateYear = (val) => {
-    changeSelectedYear(val);
-  };
+  const { year, changeYear } = useContext(YearContext);
 
   useEffect(() => {
-    console.log(selectedYear);
-  }, [selectedYear]);
+    console.log(year);
+  }, [year]);
 
   return (
     <div className="navbar">
       Data Dashboard
-      <select onChange={(e) => updateYear(e.target.value)}>
+      <select value={year} onChange={(e) => changeYear(e.target.value)}>
         <option value="2006"> 2006 </option>
         <option value="2007"> 2007 </option>
         <option value="2008"> 2008 </option>
@@ -28,7 +25,7 @@ function NavBar() {
         <option value="2016"> 2016 </option>
         <option value="2017"> 2017 </option>
         <option value="2018"> 2018 </option>
-        <option selected value="2019"> 2019 </option>
+        <option value="2019"> 2019 </option>
       </select>
     </div>
   );

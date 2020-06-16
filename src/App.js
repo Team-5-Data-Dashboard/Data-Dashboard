@@ -3,12 +3,15 @@ import './App.scss';
 import './assets/circle.svg';
 import NavBar from './components/navBar';
 import MapComponent from './components/mapComponent';
+import YearContextProvider from './contexts/yearContext';
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <MapComponent year={2019} />
+      <YearContextProvider>
+        <NavBar />
+        <MapComponent year={2019} />
+      </YearContextProvider>
     </div>
   );
 }

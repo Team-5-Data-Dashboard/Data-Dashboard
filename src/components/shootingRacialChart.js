@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { HorizontalBar } from 'react-chartjs-2';
+import { YearContext } from '../contexts/yearContext';
 
 const RACES = {
   'AMERICAN INDIAN/ALASKAN NATIVE': {
@@ -33,9 +34,9 @@ const RACES = {
   },
 };
 
-function ShootingRacialChart(props) {
+function ShootingRacialChart() {
   const [data, setData] = useState([]);
-  const { year } = props;
+  const { year } = useContext(YearContext);
 
   const fetchData = (year) => {
     const url = `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllCountByRace?year=${year}`;

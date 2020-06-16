@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Map, TileLayer } from 'react-leaflet';
 import NYCOpenDataLogo from '../NYCOpenDataLogo.png';
 import ShootingIncidenceMarkers from './shootingIncidenceMarkers';
+import { YearContext } from '../contexts/yearContext';
 
 const DATA_SRC = 'https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8';
 
-function PaneMap(props) {
+function PaneMap() {
   const [data, setData] = useState([]);
-  const { year } = props;
+  const { year } = useContext(YearContext);
 
   const fetchData = (year) => {
     const url = `https://webhooks.mongodb-stitch.com/api/client/v2.0/app/data-dashboard-ipfkx/service/Shootings/incoming_webhook/getAllByYear?year=${year}`;
