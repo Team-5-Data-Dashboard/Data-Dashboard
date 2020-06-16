@@ -1,12 +1,8 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 import { YearContext } from '../contexts/yearContext';
 
 function NavBar() {
   const { year, changeYear } = useContext(YearContext);
-
-  useEffect(() => {
-    console.log(year);
-  }, [year]);
 
   return (
     <div className="navbar">
